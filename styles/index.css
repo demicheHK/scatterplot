@@ -1,0 +1,48 @@
+body {
+    color: #49ff3a;
+}
+
+svg{
+    background-color:#fff;
+    margin: 0px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-decoration: bold;
+    padding-left:20px;
+    color: darkblue;
+}
+p {
+    font-family: sans-serif;
+    margin: 0px 0px 0px 0px;
+}
+.bar {
+    font-family: fantasy;
+}
+
+.cercle {
+    fill : #7cb0ff;
+    opacity: 0.5;
+}
+
+.cercle:hover{
+    cursor:crosshair;
+}
+
+.axis
+{
+    fill:darkblue;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke:black;
+    stroke-opacity: 0.2;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family:sans-serif;
+    font-size:12px;
+}
