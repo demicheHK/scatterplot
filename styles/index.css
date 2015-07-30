@@ -33,7 +33,9 @@ p {
 .axis
 {
     fill:darkblue;
+    shape-rendering: crispEdges;
 }
+
 
 .axis path,
 .axis line {
@@ -45,4 +47,8 @@ p {
 .axis text {
     font-family:sans-serif;
     font-size:12px;
+}
+
+line.h {
+    shape-rendering: crispEdges;
 }
