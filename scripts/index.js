@@ -2,7 +2,7 @@
  * Created by tristanmaurel on 24/07/15.
  */
 
-var svg = d3.select("body").append("svg");
+var svg = d3.select("#graph").append("svg");
 
 var dataset2 = [];
 
@@ -15,7 +15,9 @@ var dataset = [];
 d3.csv("scripts/qd.csv")
     .row(function(d) {
         if(isNaN(bac(d.bacplus)))return;
-        return {naissance : +d.naissance, bacplus:bac(d.bacplus), uid:d.naissance+"|"+d.bacplus};
+        return {naissance : +d.naissance, bacplus:bac(d.bacplus), pays: d.pays,
+            statut : d.statut,formation : d.formation,inscription : d.inscription,finance : d.finance,
+            uid:d.naissance+"|"+d.bacplus};
     })
     .get(function(error, rows) {
         //console.log(rows);
@@ -33,6 +35,10 @@ d3.csv("scripts/qd.csv")
         //update();
         update2();
     });
+
+//var color=d3.color();
+var color=d3.scale.category10();
+
 
 
 /*
@@ -94,8 +100,8 @@ function removeone(){
 
 
 //hauteur et largeur du scatter plot à revoir
-var h=400;
-var l=840;
+var h=300;
+var l=$('.container').width()-220;
 svg.attr("width",l);
 svg.attr("height",h);
 //marge aux extrémités
@@ -104,7 +110,7 @@ var m = 80;
 
 
 // ---------------------------------------------------UPDATE------------------------------------------------------------
-
+/*
 function update()
 {
 
@@ -130,22 +136,12 @@ function update()
         .tickFormat(d3.format("04d"));
 
     svg.append("g").attr("class","axis")
-        .attr("transform", "translate(0," + (h - m+20) + ")")
+        .attr("transform", "translate(0," + (h-20) + ")")
         .text("Année de naissance")
         .call(xAxis);
 
 
-    //Axes des ordonnées enlevé
-    /*var yAxis = d3.svg.axis()
-     .scale(yScale)
-     .orient("left")
-     .ticks(d3.max(dataset2,function(d){return d.bacplus;}));
 
-     svg.append("g").attr("class","axis")
-     .attr("transform", "translate(" + (m-20) + ",0)")
-     .call(yAxis);
-
-     */
 
 
     //Lignes
@@ -189,15 +185,6 @@ function update()
             console.log(d);
             d3.select(this).attr('stroke-width', 3)
             //ci-dessous : étiquette
-            /*
-
-             .append("text")
-             .attr("x", function(d){return xScale(d[0]);})
-             .attr("y", function(d){return yScale(d[1]);})
-             .text(function(d, i) {
-             return "Nombre d'adhérents : "  +d[2]+"\nAnnée de naissance : "+d[0]+"\nNiveau d'études : bac+"+d[1];
-             });
-             */
         })
         .on('mouseout', function (d) {
             d3.select(this).attr('stroke-width', 0);
@@ -208,6 +195,7 @@ function update()
         })
     ;
 }
+*/
 
 /*circles.transition(100)
  .attr("r",function(d){return zScale(1);});
@@ -233,7 +221,7 @@ function update2()
     //Échelles
     var xScale = d3.scale.linear()
         .domain([d3.min(dataset2,function(d){return d.naissance;}),d3.max(dataset2,function(d){return d.naissance})])
-        .range([m,l-m]);
+        .range([80,l-10]);
 
     var max=d3.max(dataset2,function(d){return d.bacplus;});
 
@@ -241,7 +229,7 @@ function update2()
     var yScale = d3.scale.linear()
         //.domain([0,d3.max(dataset2,function(d){return d.bacplus;})]) //à transformer en [0,7] ?
         .domain(d3.extent(dataset2,function(d){return d.bacplus;})) //à transformer en [0,7] ?
-        .range([h-m,m]);
+        .range([h-50,50]);
 
 
     var zScale = d3.scale.linear()
@@ -249,16 +237,18 @@ function update2()
         .range([2,15]);
 
 
-    //axes du scatter plot
+    //---------------------axes-----------------------------
     var xAxis = d3.svg.axis()
         .scale(xScale)
         .orient("bottom")
+
         .tickFormat(d3.format("04d")); //enlever la virgule
 
     svg.append("g").attr("class","axis")
-        .attr("transform", "translate(0," + (h - m+20) + ")")
+        .attr("transform", "translate(0," + (h - 20) + ")")
         .text("Année de naissance")
-        .call(xAxis);
+        .call(xAxis)
+        .attr("margin-top",10);
 
     /*
 
@@ -274,80 +264,126 @@ function update2()
      */
 
 
-    //Lignes
+    //--------------------------------------Lignes-----------------------------
     var dat=[2,3,4,5];
     //dat=d3.range(2,6);
-    console.log("ello",dat);
     var lines=svg.selectAll("line.h").data(dat);
     lines.enter()
         .append("line")
         .attr("class",'h')
-        .attr("x1",0)
+        .attr("x1",60)
         .attr("y1",function (d) { return yScale(d);})
-        .attr("x2",1000)
+        .attr("x2",l)
         .attr("y2",function (d) { return yScale(d);})
         .attr("stroke-width",1)
         .attr("stroke","#eee");
 
+        //Légende
+        var legend = svg.selectAll("text.t")
+            .data(dat)
+            .enter()
+            .append("text")
+            .attr("class","t")
+            .attr("x", (5) )
+            .attr("y", function (d) { return yScale(d);} )
+            .attr("text-anchor", "left")
+            .style("font-size", "12px")
+            .style("text-decoration", "none")
+            .text(function (d) {return "Bac +" + d;})
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "4px")
+            .attr("fill", "darkblue");
 
     var circles = svg.selectAll("circle").data(dataset2);
 
-
-    //cercles
-    circles.enter()
-        .append("circle")
-        .attr('stroke','teal')
-        .attr('stroke-width',0)
-        .attr("cx",function(d){return xScale(d.naissance);})
-        .attr("cy",function(d){
-            return yScale(d.bacplus);})
-        .attr("r",function(d){return zScale(d.n);})
-        .attr("class","cercle")
-
-        .on('mouseover',function(d){
-            //var a = xScale(d[0]);
-            //var b = yScale(d[1]);
-            console.log(d);
-            d3.select(this).attr('stroke-width',3)  //à faire fonctionner
-            /*
-             .append("text")
-             .attr("x", function(d){return xScale(d[0]);})
-             .attr("y", function(d){return yScale(d[1]);})
-             .text(function(d, i) {
-             return "Nombre d'adhérents : "  +d[2]+"\nAnnée de naissance : "+d[0]+"\nNiveau d'études : bac+"+d[1];
-             });
-             */
+    var groups = svg.selectAll("g.groups").data(dataset2)
+        .enter()
+        .append('g').attr('class', 'groups')
+        .attr("transform", function (d) {
+            return 'translate(' + xScale(d.naissance) + ',' + yScale(d.bacplus) + ')';
         })
-        .on('mouseout',function(d){
-            d3.select(this).attr('stroke-width',0);
-        })
-        .append("svg:title")
-        .text(function(d, i) { return "Nombre d'adhérents : "+ d.n +"\nAnnée de naissance : "+ d.naissance+"\nNiveau d'études : bac+"+ d.bacplus;})
-    ;
+        .selectAll("circle.peep")
+        .data(function (d) {
+            return d.values
+        });
+
+    $(document).ready(function() {
+
+    });
+
+
+    $('#option1').on('click', function () {
+
+        groups.exit().remove()
 
 
 
-    var groups=svg.selectAll("g.groups").data(dataset2)
-            .enter()
-            .append('g').attr('class','groups')
-            .attr("transform",function(d){return 'translate('+xScale(d.naissance)+','+yScale(d.bacplus)+')';})
-            .data([1,2,3])
-            .enter()
-            .append('circle').attr('class','peep')
-            .attr("cx",0)
-            .attr("cy",function(d,i){return i*2;})
-            .attr("r",2)
-        ;
+        circles.enter()
+            .append("circle")
+            .attr('stroke','teal')
+            .attr('stroke-width',0)
+            .attr("cx",function(d){return xScale(d.naissance);})
+            .attr("cy",function(d){
+                return yScale(d.bacplus);})
+            .attr("r",function(d){return zScale(d.n);})
+            .attr("class","cercle")
+            .on('mouseover',function(d){
+                //var a = xScale(d[0]);
+                //var b = yScale(d[1]);
+                d3.select(this).attr('stroke-width',3)  //à faire fonctionner
+
+            })
+            .on('mouseout',function(d){
+                d3.select(this).attr('stroke-width',0);
+            })
+            .append("svg:title")
+            .text(function(d, i) { return "Nombre d'adhérents : "+ d.n +"\nAnnée de naissance : "+ d.naissance+"\nNiveau d'études : bac+"+ d.bacplus;})
+
+    });
+
+    $('#option2').on('click',function () {
+
+            circles.exit().remove();
+
+            groups.enter()
+            .append('circle').attr('class', 'peep')
+            .attr("cx", 0).attr("cy", function (d, i) {
+                return i * -7;
+            }).attr("r", 3)
+            .attr('stroke', 'teal')
+            .attr('stroke-width', 0)
+            .attr("fill", function (d) {
+                return color(d.pays);
+            })
+            .on('mouseover', function (d) {
+                d3.select(this).attr('stroke-width', 3)
+            })
+            .on('mouseout', function (d) {
+                d3.select(this).attr('stroke-width', 0);
+                d3.select(this).attr("fill", function (d) {
+                    return color(d.pays);
+                })
+            })
+            .append("svg:title")
+            .text(function (d, i) {
+                return "Année de naissance : " + d.naissance + "\nNiveau d'études : bac+" + d.bacplus + "\nPays d'origine : " + d.pays;
+            });
+    })
 
 
-    /*
-     groups.data()
-     .enter()
-     .append("circle")
-     .attr("cx",0)
-     .attr("cy",function(d,i){return i*2;})
-     .attr("r",2);
-     */
+
+
+
+
+    }
+
+    /*svg.selectAll("button")
+        .data(dat).enter()
+        .append("button")
+        .
+*/
+
+
     /*circles.transition(100)
      .attr("r",function(d){return zScale(1);});
 
@@ -359,4 +395,14 @@ function update2()
 
      */
 
-}
+
+    //-----------------------------------FILTRES-------------------------------------------------------------
+
+    /*var checkboxFilter = svg.selectAll("checkbox").on("change",function(){
+        var type = this.checked ? 'inline', 'none';
+
+        svg.selectAll(.peep)
+        .filter(function(d))
+    })
+
+    */

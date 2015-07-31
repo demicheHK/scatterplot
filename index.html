@@ -2,11 +2,19 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="src/d3.min.js"></script>
+    <script src="src/jquery-1.11.3.min.js"></script>
+    <script src="src/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
     <!-- Connection aux bibliotèques jQuery, d3 et javascript -->
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <title>
         Scatter Plot
     </title>
@@ -15,13 +23,49 @@
 
 <body>
 
-<h1> Les adhérents ICCF@HEC Paris </h1>
+<div class="container">
+<h1> Les adhérents ICCF@HEC Paris
+</h1>
 
-<p> </p>
+    <hr />
+    <div class ="filtreAffichage">
+        <h4>Filtre pays</h4>
+        <div id="pays">
+            <p><input type="checkbox" class="checkbox" aria-label="...">  &nbsp France  </p>
+            <p><input type="checkbox" class="checkbox" aria-label="..."> &nbsp Nigeria </p>
+            <p> <input type="checkbox" class="checkbox" aria-label="..."> &nbsp Cameroun </p>
+        </div>
+        <h4> Filtre finance</h4>
+        <div id="finance">
+        <p> &nbsp Oui <input type="checkbox" class="checkbox" aria-label="..."> </p>
+        <p> &nbsp Non <input type="checkbox" class="checkbox" aria-label="..."> </p>
+        </div>
+    </div>
+
+    <div id="graph"></div>
+
+          <!--div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="button" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+        </label>
+        <label class="btn btn-primary">
+            <input type="button" name="options" id="option2" autocomplete="off"> Radio 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="button" name="options" id="option3" autocomplete="off"> Radio 3
+        </label>
+    </div-->
+
+    <div class="btn-group" role="group" aria-label="...">
+        <button id="option1" type="button" class="btn btn-primary">Graphe A</button>
+        <button id="option2" type="button" class="btn btn-primary">Graphe B</button>
+    </div>
 
 
+</div>
+</body>
 
 <script rel="text/javascript" src="./scripts/index.js" ></script>
 
-</body>
+
 </html>

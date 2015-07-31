@@ -4,18 +4,33 @@ body {
 
 svg{
     background-color:#fff;
-    margin: 0px 20px 20px 20px;
-    border-radius: 10px;
+    display: block;
+    margin: auto;
+    float:right;
 }
+
+.filtreAffichage {
+    float:left;
+    width: 200px;
+    margin:auto;
+}
+.container{
+    margin:auto;
+    display: block;
+}
+
 
 h1 {
     text-decoration: bold;
     padding-left:20px;
     color: darkblue;
+    clear:both;
+    z-index:1;
 }
 p {
     font-family: sans-serif;
     margin: 0px 0px 0px 0px;
+    padding : 0px 0px 0px 0px;
 }
 .bar {
     font-family: fantasy;
@@ -52,3 +67,17 @@ p {
 line.h {
     shape-rendering: crispEdges;
 }
+
+.checkbox{
+    float:left;
+}
+
+li{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+#choix {
+    float:right;
+  }
