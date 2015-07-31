@@ -364,14 +364,19 @@ function update2() {
                 .attr("cx", 0).attr("cy", function (d, i) {
                 return i * -7;
             }).attr("r", 3)
-            .attr('stroke', 'teal')
             .attr('stroke-width', 0)
             .attr("fill", function (d) {
                 return color(d.pays);
             })
             .on('mouseover', function (d) {
-                d3.select(this).attr('stroke-width', 3)
-            })
+                    d3.select(this).attr('stroke-width', 3)
+                        .attr("fill", function (d) {
+                            return color(d.pays);
+                        })
+                        .attr("stroke",function (d) {
+                            return color(d.pays);
+                        })
+                })
             .on('mouseout', function (d) {
                 d3.select(this).attr('stroke-width', 0);
                 d3.select(this).attr("fill", function (d) {
@@ -395,7 +400,6 @@ function update2() {
         circles.enter()
             .append("circle")
             .attr("class",'blue')
-            .attr('stroke', 'teal')
             .attr('stroke-width', 0)
             .attr("cx", function (d) {
                 return xScale(d.naissance);
@@ -426,14 +430,6 @@ function update2() {
 
 
     }
-
-    var t = [1,2,3,4]
-    svg.selectAll(".o").data(t).enter()
-        .append("circle")
-        .attr("cx",0)
-        .attr("cy",0)
-        .attr("r",1000)
-        .attr("fill","red");
 
 
 
