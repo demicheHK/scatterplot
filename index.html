@@ -26,19 +26,21 @@
 <div class="container">
 <h1> Les adhérents ICCF@HEC Paris
 </h1>
-
+<div class="o"></div>
     <hr />
     <div class ="filtreAffichage">
-        <h4>Filtre pays</h4>
+        <h4>Pays de résidence</h4>
         <div id="pays">
-            <p><input type="checkbox" class="checkbox" aria-label="...">  &nbsp France  </p>
-            <p><input type="checkbox" class="checkbox" aria-label="..."> &nbsp Nigeria </p>
-            <p> <input type="checkbox" class="checkbox" aria-label="..."> &nbsp Cameroun </p>
+            <p><label for="France"><input type="checkbox" class="checkbox" id="France" >  &nbsp France</label> <div class="o"> ab</div> </p>
+            <p><label for="Sénégal"><input type="checkbox" class="checkbox" id="Sénégal" > &nbsp Sénégal </label><div class="o"></div></p>
+            <p><label for="Cameroun"> <input type="checkbox" class="checkbox" id="Cameroun" > &nbsp Cameroun </label><div class="o"></div></p>
+            <p> <label for="Gabon"><input type="checkbox" class="checkbox" id="Gabon" > &nbsp Gabon </label><div class="o"></div></p>
+            <p> <label for="Côte d'Ivoire"><input type="checkbox" class="checkbox" id="Côte d'Ivoire" > &nbsp Côte d'Ivoire </label><div class="o"></div></p>
         </div>
-        <h4> Filtre finance</h4>
+        <h4>Exerçant dans la finance</h4>
         <div id="finance">
-        <p> &nbsp Oui <input type="checkbox" class="checkbox" aria-label="..."> </p>
-        <p> &nbsp Non <input type="checkbox" class="checkbox" aria-label="..."> </p>
+        <p> <label for="Oui"> &nbsp Oui <input type="checkbox" class="checkbox" id="Oui" > </label></p>
+        <p> <label for="Non"> &nbsp Non <input type="checkbox" class="checkbox" id="Non" > </label></p>
         </div>
     </div>
 
@@ -56,10 +58,15 @@
         </label>
     </div-->
 
-    <div class="btn-group" role="group" aria-label="...">
-        <button id="option1" type="button" class="btn btn-primary">Graphe A</button>
-        <button id="option2" type="button" class="btn btn-primary">Graphe B</button>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Graphe A
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Graphe B
+        </label>
     </div>
+
 
 
 </div>

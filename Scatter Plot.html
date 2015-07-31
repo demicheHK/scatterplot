@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://localhost:63342/scatterplot/index.html -->
+<html lang="fr" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <script src="./Scatter Plot_files/d3.min.js"></script><style type="text/css"></style>
+    <script src="./Scatter Plot_files/jquery-1.11.3.min.js"></script>
+    <script src="./Scatter Plot_files/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
+    <!-- Connection aux bibliotèques jQuery, d3 et javascript -->
+    <link rel="stylesheet" type="text/css" href="./Scatter Plot_files/index.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./Scatter Plot_files/bootstrap.min.js"></script>
+    <title>
+        Scatter Plot
+    </title>
+</head>
+
+
+<body>
+
+<div class="container">
+<h1> Les adhérents ICCF@HEC Paris
+</h1>
+
+    <hr>
+    <div class="filtreAffichage">
+        <h4>Filtre pays</h4>
+        <div id="pays">
+            <p><label for="France"><input type="checkbox" class="checkbox" id="France" checked="true">  &nbsp; France</label>  </p>
+            <p><label for="Sénégal"><input type="checkbox" class="checkbox" id="Sénégal" checked="true"> &nbsp; Sénégal </label></p>
+            <p><label for="Cameroun"> <input type="checkbox" class="checkbox" id="Cameroun" checked="true"> &nbsp; Cameroun </label></p>
+            <p> <label for="Gabon"><input type="checkbox" class="checkbox" id="Gabon" checked="true"> &nbsp; Gabon </label></p>
+            <p> <label for="Côte d&#39;Ivoire"><input type="checkbox" class="checkbox" id="Côte d&#39;Ivoire" checked="true"> &nbsp; Côte d'Ivoire </label></p>
+        </div>
+        <h4> Filtre finance</h4>
+        <div id="finance">
+        <p> <label for="Oui"> &nbsp; Oui <input type="checkbox" class="checkbox" id="Non" checked="true"> </label></p>
+        <p> <label for="Non"> &nbsp; Non <input type="checkbox" class="checkbox" id="" checked="true"> </label></p>
+        </div>
+    </div>
+
+    <div id="graph"><svg width="720" height="300"><line class="h" x1="60" y1="250" x2="720" y2="250" stroke-width="1" stroke="#eee"></line><line class="h" x1="60" y1="183.33333333333334" x2="720" y2="183.33333333333334" stroke-width="1" stroke="#eee"></line><line class="h" x1="60" y1="116.66666666666667" x2="720" y2="116.66666666666667" stroke-width="1" stroke="#eee"></line><line class="h" x1="60" y1="50" x2="720" y2="50" stroke-width="1" stroke="#eee"></line><text class="t" x="5" y="250" text-anchor="left" font-family="sans-serif" font-size="4px" fill="darkblue" style="font-size: 12px; text-decoration: none;">Bac +2</text><text class="t" x="5" y="183.33333333333334" text-anchor="left" font-family="sans-serif" font-size="4px" fill="darkblue" style="font-size: 12px; text-decoration: none;">Bac +3</text><text class="t" x="5" y="116.66666666666667" text-anchor="left" font-family="sans-serif" font-size="4px" fill="darkblue" style="font-size: 12px; text-decoration: none;">Bac +4</text><text class="t" x="5" y="50" text-anchor="left" font-family="sans-serif" font-size="4px" fill="darkblue" style="font-size: 12px; text-decoration: none;">Bac +5</text><g class="axis" transform="translate(0,280)" margin-top="10">Année de naissance<g class="tick" transform="translate(115,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1960</text></g><g class="tick" transform="translate(202.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1965</text></g><g class="tick" transform="translate(290,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1970</text></g><g class="tick" transform="translate(377.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1975</text></g><g class="tick" transform="translate(465,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1980</text></g><g class="tick" transform="translate(552.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1985</text></g><g class="tick" transform="translate(640,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1990</text></g><path class="domain" d="M80,6V0H710V6"></path></g><g class="groups" transform="translate(447.5,116.66666666666667)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1979
+Niveau d'études : bac+4
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(395,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1976
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(640,50)"><circle class="peep"></circle><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1990
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(325.00000000000006,116.66666666666667)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1972
+Niveau d'études : bac+4
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(482.5,50)"><circle class="peep"></circle><circle class="peep"></circle><circle class="peep"></circle><circle class="peep"></circle></g><g class="groups" transform="translate(272.5,50)"><circle class="peep"></circle></g><g class="groups" transform="translate(605.0000000000001,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1988
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1988
+Niveau d'études : bac+5
+Pays d'origine : Côte d'Ivoire</title></circle><circle class="peep" cx="0" cy="-14" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1988
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep"></circle></g><g class="groups" transform="translate(132.5,250)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1961
+Niveau d'études : bac+2
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(482.5,116.66666666666667)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1981
+Niveau d'études : bac+4
+Pays d'origine : Côte d'Ivoire</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1981
+Niveau d'études : bac+4
+Pays d'origine : Côte d'Ivoire</title></circle></g><g class="groups" transform="translate(377.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1975
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1975
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(150,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1962
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(167.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1963
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(342.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1973
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1973
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(412.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1977
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(552.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1985
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1985
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-14" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1985
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(360,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1974
+Niveau d'études : bac+5
+Pays d'origine : Côte d'Ivoire</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1974
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(710,183.33333333333334)"><circle class="peep"></circle><circle class="peep"></circle></g><g class="groups" transform="translate(587.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1987
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1987
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(307.49999999999994,50)"><circle class="peep"></circle></g><g class="groups" transform="translate(534.9999999999999,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1984
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1984
+Niveau d'études : bac+5
+Pays d'origine : Côte d'Ivoire</title></circle><circle class="peep" cx="0" cy="-14" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1984
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(500,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1982
+Niveau d'études : bac+5
+Pays d'origine : Côte d'Ivoire</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1982
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-14" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1982
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(570.0000000000001,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1986
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-7" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1986
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle><circle class="peep" cx="0" cy="-14" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1986
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(657.4999999999999,50)"><circle class="peep"></circle></g><g class="groups" transform="translate(185,116.66666666666667)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1964
+Niveau d'études : bac+4
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(534.9999999999999,183.33333333333334)"><circle class="peep"></circle></g><g class="groups" transform="translate(622.5,50)"><circle class="peep"></circle><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#d62728"><title>Année de naissance : 1989
+Niveau d'études : bac+5
+Pays d'origine : Côte d'Ivoire</title></circle></g><g class="groups" transform="translate(517.5,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1983
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g><g class="groups" transform="translate(80,50)"><circle class="peep" cx="0" cy="0" r="3" stroke="teal" stroke-width="0" fill="#1f77b4"><title>Année de naissance : 1958
+Niveau d'études : bac+5
+Pays d'origine : France</title></circle></g></svg></div>
+
+          <!--div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="button" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+        </label>
+        <label class="btn btn-primary">
+            <input type="button" name="options" id="option2" autocomplete="off"> Radio 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="button" name="options" id="option3" autocomplete="off"> Radio 3
+        </label>
+    </div-->
+
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Graphe A
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Graphe B
+        </label>
+    </div>
+
+
+
+</div>
+
+
+<script rel="text/javascript" src="./Scatter Plot_files/index.js"></script>
+
+
+</body></html>
