@@ -390,6 +390,16 @@ function update2() {
                             if (checks[i].id == d.statut)return true;
                         }
                     })
+
+                    .filter(function (d) {
+                        var checks = $('#sexe input.checkbox:checked');
+                        for (var i = 0; i < checks.length; i++) {
+                            //var id=checks[i].id;
+                            if (checks[i].id == 'Homme' && d.sexe == 1)return true;
+                            if (checks[i].id == 'Femme' && d.sexe == 2)return true;
+                            if (checks[i].id == 'Autre' && d.sexe == 0)return true;
+                        }
+                    })
                 return zScale(v.length);
             })
 

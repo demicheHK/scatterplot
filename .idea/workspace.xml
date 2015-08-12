@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cf1daff-6b57-465a-a00e-db7b50291a2d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/index.css" afterPath="$PROJECT_DIR$/styles/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/index.js" afterPath="$PROJECT_DIR$/scripts/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index2.html" afterPath="$PROJECT_DIR$/index2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scatterplot.iws" />
@@ -81,11 +79,11 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.0889213">
-              <caret line="251" column="40" selection-start-line="251" selection-start-column="40" selection-end-line="251" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.9227405">
+              <caret line="401" column="22" selection-start-line="401" selection-start-column="22" selection-end-line="401" selection-end-column="22" />
               <folding>
-                <marker date="1439361616000" expanded="true" signature="2676:2695" placeholder="..." />
-                <marker date="1439361616000" expanded="true" signature="2780:2787" placeholder="..." />
+                <marker date="1439363303000" expanded="true" signature="2676:2695" placeholder="..." />
+                <marker date="1439363303000" expanded="true" signature="2780:2787" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -301,7 +299,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439352053785</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update2">
+      <created>1439363067242</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1439363067242</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -360,7 +364,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -418,8 +423,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding>
-            <marker date="1439361616000" expanded="true" signature="2676:2695" placeholder="..." />
-            <marker date="1439361616000" expanded="true" signature="2780:2787" placeholder="..." />
+            <marker date="1439363303000" expanded="true" signature="2676:2695" placeholder="..." />
+            <marker date="1439363303000" expanded="true" signature="2780:2787" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -506,11 +511,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0889213">
-          <caret line="251" column="40" selection-start-line="251" selection-start-column="40" selection-end-line="251" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.9227405">
+          <caret line="401" column="22" selection-start-line="401" selection-start-column="22" selection-end-line="401" selection-end-column="22" />
           <folding>
-            <marker date="1439361616000" expanded="true" signature="2676:2695" placeholder="..." />
-            <marker date="1439361616000" expanded="true" signature="2780:2787" placeholder="..." />
+            <marker date="1439363303000" expanded="true" signature="2676:2695" placeholder="..." />
+            <marker date="1439363303000" expanded="true" signature="2780:2787" placeholder="..." />
           </folding>
         </state>
       </provider>
