@@ -89,5 +89,9 @@ label {
     dotted:red;
 }
 
+.hide{
+    display: none;
+}
+
 
 

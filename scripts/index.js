@@ -249,6 +249,7 @@ function update2() {
 
     if ($('input[name=options]:checked').attr('id') == "option1") {
 
+        $("#color").removeClass("hide");
 
         var groups = svg.selectAll("g.groups").data(dataset2)
                 .enter()
@@ -345,7 +346,7 @@ function update2() {
 
 
     } else {
-
+        $("#color").addClass("hide");
 
         var circles = svg.selectAll("circle.blue").data(dataset2);
 
