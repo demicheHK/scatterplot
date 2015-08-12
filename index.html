@@ -24,41 +24,52 @@
 <body>
 
 <div class="container">
-<h1> Les adhérents ICCF@HEC Paris
-</h1>
+<h1> Les adhérents ICCF@HEC Paris</h1>
 <div class="o"></div>
     <hr />
     <div class ="filtreAffichage">
         <h4>Pays de résidence</h4>
         <div id="pays">
-            <p><label for="France"><input type="checkbox" class="checkbox" id="France" >  &nbsp France</label> </p>
-            <p><label for="Sénégal"><input type="checkbox" class="checkbox" id="Sénégal" > &nbsp Sénégal </label></p>
-            <p><label for="Cameroun"> <input type="checkbox" class="checkbox" id="Cameroun" > &nbsp Cameroun </label></p>
-            <p> <label for="Gabon"><input type="checkbox" class="checkbox" id="Gabon" > &nbsp Gabon </label></p>
-            <p> <label for="Côte d'Ivoire"><input type="checkbox" class="checkbox" id="Côte d'Ivoire" > &nbsp Côte d'Ivoire </label></p>
+            <p><label for="France"><input type="checkbox" class="checkbox" id="France" >  &nbsp France </label> </p>
         </div>
         <h4>Exerçant dans la finance</h4>
         <div id="finance">
-        <p> <label for="Oui"> &nbsp Oui <input type="checkbox" class="checkbox" id="Oui" > </label></p>
-        <p> <label for="Non"> &nbsp Non <input type="checkbox" class="checkbox" id="Non" > </label></p>
+            <p> <label for="Oui" style="font-weight: normal"> &nbsp Oui <input type="checkbox" class="checkbox" id="Oui" > </label></p>
+            <p> <label for="Non" style="font-weight: normal"> &nbsp Non <input type="checkbox" class="checkbox" id="Non" > </label></p>
+        </div>
+        <h4>Sexe</h4>
+        <div id="sexe">
+            <p> <label for="Homme" style="font-weight: normal"> &nbsp Homme <input type="checkbox" class="checkbox" id="Homme" ></label></p>
+            <p> <label for="Femme" style="font-weight: normal"> &nbsp Femme <input type="checkbox" class="checkbox" id="Femme" ></label></p>
+            <p> <label for="Autre" style="font-weight: normal"> &nbsp Autre <input type="checkbox" class="checkbox" id="Autre" ></label></p>
+        </div>
+        <h4>Statut professionnel</h4>
+        <div id="statut">
+            <p> <label for="Etudiant" style="font-weight: normal"> &nbsp Etudiant <input type="checkbox" class="checkbox" id="Etudiant" ></label></p>
+            <p> <label for="Employé" style="font-weight: normal"> &nbsp Employé <input type="checkbox" class="checkbox" id="Employé" ></label></p>
+            <p> <label for="En recherche d'emploi" style="font-weight: normal"> &nbsp En recherche d'emploi <input type="checkbox" class="checkbox" id="En recherche d'emploi" ></label></p>
         </div>
     </div>
 
-    <div id="graph"></div>
 
-          <!--div class="btn-group" data-toggle="buttons">
+    <div id="button2" class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary active">
-            <input type="button" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+            <input type="radio" name="Option" id="option3" autocomplete="off" checked> Pays
         </label>
         <label class="btn btn-primary">
-            <input type="button" name="options" id="option2" autocomplete="off"> Radio 2
+            <input type="radio" name="Option" id="option4" autocomplete="off"> Formation
         </label>
         <label class="btn btn-primary">
-            <input type="button" name="options" id="option3" autocomplete="off"> Radio 3
+            <input type="radio" name="Option" id="option5" autocomplete="off"> Sexe
         </label>
-    </div-->
+        <label class="btn btn-primary">
+            <input type="radio" name="Option" id="option6" autocomplete="off"> Statut
+        </label>
+    </div>
+    <h4 id="colorer">Colorer par:</h4>
 
-    <div class="btn-group" data-toggle="buttons">
+
+    <div class="btn-group" data-toggle="buttons" style="margin-top: 0px">
         <label class="btn btn-primary active">
             <input type="radio" name="options" id="option1" autocomplete="off" checked> Graphe A
         </label>
@@ -66,6 +77,9 @@
             <input type="radio" name="options" id="option2" autocomplete="off"> Graphe B
         </label>
     </div>
+
+
+    <div id="graph" style="margin-top: 100px"></div>
 
 
 

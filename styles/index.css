@@ -5,8 +5,6 @@ body {
 svg{
     background-color:#fff;
     display: block;
-    margin: auto;
-    float:right;
 }
 
 .filtreAffichage {
@@ -14,7 +12,8 @@ svg{
     width: 200px;
     margin:auto;
 }
-.container{
+
+.container {
     margin:auto;
     display: block;
 }
@@ -47,16 +46,17 @@ p {
 
 .axis
 {
-    fill:darkblue;
+    fill: black;
+    opacity: 0.7;
     shape-rendering: crispEdges;
 }
 
 
 .axis path,
 .axis line {
-    fill: none;
+    fill:none;
     stroke:black;
-    stroke-opacity: 0.2;
+    stroke-opacity: 0.7;
     shape-rendering: crispEdges;
 }
 .axis text {
@@ -76,21 +76,18 @@ line.h {
 
 
 li{
-    list-style-type:none;
-    padding:0;
-    margin:0;
+    display: inline-block;
+    text-align: center;
 }
 
 #choix {
     float:right;
-  }
+}
+
 label {
     cursor: grab;
     dotted:red;
 }
 
-/*.o {
-    background-color: red;
-}
 
-*>
+
