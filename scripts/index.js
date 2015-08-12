@@ -13,7 +13,7 @@ var dataset2 = [];
 var dataset = [];
 
 //d.sexe=Math.floor(Math.random()*2);
-
+//
 //d3.csv("scripts/qd.csv")
 d3.csv("scripts/questionnaire.csv")
     .row(function(d, i) {
