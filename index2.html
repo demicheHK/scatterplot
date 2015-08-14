@@ -6,7 +6,7 @@
     <script src="src/jquery-1.11.3.min.js"></script>
     <script src="src/jquery-migrate-1.2.1.min.js" charset="utf-8"></script>
     <!-- Connection aux bibliotèques jQuery, d3 et javascript -->
-    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/index.css"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -21,15 +21,12 @@
 </head>
 
 
-<body>
 
 <div class="container">
 
 
-<h1> Les adhérents ICCF@HEC Paris</h1>
-<hr />
-
-
+    <h1> Les adhérents ICCF@HEC Paris</h1>
+    <hr/>
 
 
 
@@ -38,91 +35,127 @@
             <div>
                 <ul class="nav navbar-nav navbar-right">
                     <div id="color" class="form-inline pull-right" style="margin-top: 9px">
-                            Couleur
-                            <li id="couleur">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-default active btn-sm">
-                                        <input type="radio" name="Option" id="option3" autocomplete="off" checked> Pays
-                                    </label>
-                                    <label class="btn btn-default btn-sm">
-                                        <input type="radio" name="Option" id="option4" autocomplete="off"> Formation
-                                    </label>
-                                    <label class="btn btn-default btn-sm">
-                                        <input type="radio" name="Option" id="option5" autocomplete="off"> Sexe
-                                    </label>
-                                    <label class="btn btn-default btn-sm">
-                                        <input type="radio" name="Option" id="option6" autocomplete="off"> Statut
-                                    </label>
-                                </div></li>
-                        </div>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <div class="form-inline pull-right" style="margin-top: 9px">
+                        Couleur
+                        <li id="couleur">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active btn-sm">
+                                    <input type="radio" name="colorbtn" id="option4" checked> Pays
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="colorbtn" id="option5"> Formation
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="colorbtn" id="option6"> Sexe
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="colorbtn" id="option7"> Statut
+                                </label>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <div class="form-inline pull-right" style="margin-top: 9px">
 
-                            Afficher
-                            <li id="typgraph">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-default active btn-sm">
-                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Groupes
-                                    </label>
-                                    <label class="btn btn-default btn-sm">
-                                        <input type="radio" name="options" id="option2" autocomplete="off"> Cercles
-                                    </label>
-                                </div></li>
+                        Afficher
+                        <li id="typgraph">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active btn-sm">
+                                    <input type="radio" name="options" id="option1" checked> Groupes
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="options" id="option2"> Cercles
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="options" id="option3"> Bubbles
+                                </label>
+                            </div>
+                        </li>
 
+                    </div>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <div id="propriétés" class="form-inline pull-right" style="margin-top: 9px">
+                        Propriétés
+                        <li id="property">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active btn-sm">
+                                    <input type="radio" name="Option" id="property1" checked> Pays
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="Option" id="property2"> Formation
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="Option" id="property3"> Sexe
+                                </label>
+                                <label class="btn btn-default btn-sm">
+                                    <input type="radio" name="Option" id="property4"> Statut
+                                </label>
+                            </div>
+                        </li>
                     </div>
                 </ul>
             </div>
         </div>
     </nav>
 
-<div class="row">
-    <div id="graph"></div>
-</div>
+    <div class="row">
+        <div id="graph"></div>
+    </div>
+
 
     <div class="row">
 
 
         <div class="col-sm-3">
             <h4>Pays </h4>
-        <div id="pays"></div>
-            </div>
+
+            <div id="pays"></div>
+        </div>
 
 
         <div id="finance" class="col-sm-3">
             <h4>Métier finance</h4>
-            <label for="Oui" style="font-weight: normal"> &nbsp Oui <input type="checkbox" class="checkbox" id="Oui"></label><br>
-            <label for="Non" style="font-weight: normal"> &nbsp Non <input type="checkbox" class="checkbox" id="Non"></label><br>
+            <label for="Oui" style="font-weight: normal"> &nbsp Oui <input type="checkbox" class="checkbox"
+                                                                           id="Oui"></label><br>
+            <label for="Non" style="font-weight: normal"> &nbsp Non <input type="checkbox" class="checkbox"
+                                                                           id="Non"></label><br>
         </div>
 
 
         <div id="sexe" class="col-sm-3">
             <h4>Sexe</h4>
 
-            <label for="Homme" style="font-weight: normal"> &nbsp Homme <input type="checkbox" class="checkbox" id="Homme"></label><br>
-            <label for="Femme" style="font-weight: normal"> &nbsp Femme <input type="checkbox" class="checkbox" id="Femme"></label><br>
-            <label for="Autre" style="font-weight: normal"> &nbsp Autre <input type="checkbox" class="checkbox" id="Autre"></label>
+            <label for="Homme" style="font-weight: normal"> &nbsp Homme <input type="checkbox" class="checkbox"
+                                                                               id="Homme"></label><br>
+            <label for="Femme" style="font-weight: normal"> &nbsp Femme <input type="checkbox" class="checkbox"
+                                                                               id="Femme"></label><br>
+            <label for="Autre" style="font-weight: normal"> &nbsp Autre <input type="checkbox" class="checkbox"
+                                                                               id="Autre"></label>
         </div>
 
 
         <div id="statut" class="col-sm-3">
             <h4>Statut pro</h4>
 
-            <label for="Etudiant" style="font-weight: normal"> &nbsp Etudiant <input type="checkbox" class="checkbox" id="Etudiant"></label><br>
-            <label for="Employé" style="font-weight: normal"> &nbsp Employé <input type="checkbox" class="checkbox" id="Employé"></label><br>
-            <label for="En recherche d'emploi" style="font-weight: normal"> &nbsp Recherche d'emploi <input type="checkbox" class="checkbox" id="En recherche d'emploi"></label>
+            <label for="Etudiant" style="font-weight: normal"> &nbsp Etudiant <input type="checkbox" class="checkbox"
+                                                                                     id="Etudiant"></label><br>
+            <label for="Employé" style="font-weight: normal"> &nbsp Employé <input type="checkbox" class="checkbox"
+                                                                                   id="Employé"></label><br>
+            <label for="En recherche d'emploi" style="font-weight: normal"> &nbsp Recherche d'emploi <input
+                    type="checkbox" class="checkbox" id="En recherche d'emploi"></label>
         </div>
     </div>
 
 
+    <hr>Camille
 
 
 </div>
 
 
-
-
-
 </body>
 
-<script rel="text/javascript" src="./scripts/index.js" ></script>
+<script rel="text/javascript" src="./scripts/index.js"></script>
+
+</html>
